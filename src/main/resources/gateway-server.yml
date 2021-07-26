@@ -1,0 +1,29 @@
+# Spring properties
+spring:
+  application:
+    name: gateway-service
+
+server:
+  port: 1110
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: 'http://localhost:1111/eureka/'
+    registryFetchIntervalSeconds: 1
+    healthcheck:
+      enabled: true
+    fetch-registry: true
+  instance:
+    leaseRenewalIntervalInSeconds: 1
+
+#ribbon:
+ # eureka:
+  #  enabled: false
+
+zuul:
+  routes:
+    web-service:
+      url: http://localhost:3333
+      path: '/accounts/**'
+      serviceId: web-service
+      strip-prefix: false
