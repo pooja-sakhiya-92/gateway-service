@@ -18,4 +18,6 @@ public class GatewayServerApplication {
 	public SimpleFilter simpleFilter() {
 		return new SimpleFilter();
 	}
+
+
 }
